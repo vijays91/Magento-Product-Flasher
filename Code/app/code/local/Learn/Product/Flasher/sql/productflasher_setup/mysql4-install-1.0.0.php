@@ -4,7 +4,7 @@
  *
  * @category   Product Flasher
  * @package    Learn_Product_Flasher
- * @author     Vijayakumar
+ * @author     Vijayakumar	
  *
  */
 
@@ -21,18 +21,18 @@ $installer->addAttribute('catalog_product', 'product_flasher_title_1', array(
 		'note'					=> 'Product Flasher Title#1',
 		'input'					=> 'text',
 		'type' 					=> 'text',
-		'frontend_class'		=> ' required_entry input-text ',
+		'frontend_class'			=> ' required_entry input-text ',
 		'source'				=> '',
 		'global'				=> Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
-		'is_visible'			=> false, //    'visible' => false,
+		'visible' 				=> false, // 'is_visible'			=> false, 
 		'required'				=> true,
-		'user_defined'			=> true,
-		'visible_on_front'		=> false,
-		'sort_order'			=> 1800,
+		'user_defined'				=> true,
+		'visible_on_front'			=> false,
+		'sort_order'				=> 1800,
 		'group'					=> '',
 	)
 );
-// $installer->addAttributeToSet('catalog_product', 'Default', 'General', 'product_flasher_title_1', 1000);
+$installer->addAttributeToSet('catalog_product', 'Default', 'General', 'product_flasher_title_1', 1000);
 
 $installer->addAttribute('catalog_product', 'product_flasher_title_2', array(
 		'backend'				=> '',
@@ -41,18 +41,18 @@ $installer->addAttribute('catalog_product', 'product_flasher_title_2', array(
 		'note'					=> 'Product Flasher Title#2',
 		'input'					=> 'text',
 		'type' 					=> 'text',
-		'frontend_class'		=> ' required_entry input-text ',
+		'frontend_class'			=> ' required_entry input-text ',
 		'source'				=> '',
 		'global'				=> Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
-		'is_visible'			=> false, //    'visible' => false,
+		'visible' 				=> false, // 'is_visible'			=> false, 
 		'required'				=> true,
-		'user_defined'			=> true,
-		'visible_on_front'		=> false,
-		'sort_order'			=> 1500,
+		'user_defined'				=> true,
+		'visible_on_front'			=> false,
+		'sort_order'				=> 1500,
 		'group'					=> '',
 	)
 );
-// $installer->addAttributeToSet('catalog_product', 'Default', 'General', 'product_flasher_title_2', 1000);
+$installer->addAttributeToSet('catalog_product', 'Default', 'General', 'product_flasher_title_2', 1000);
 
 $data =  array(
 		'backend'				=> '',
@@ -61,18 +61,18 @@ $data =  array(
 		'note'					=> 'Product Flasher Enable',
 		'input'					=> 'select',
 		'type' 					=> 'int',
-		'frontend_class'		=> ' required_entry select ',
+		'frontend_class'			=> ' required_entry select ',
 		'global'				=> Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,
-		'is_visible'			=> false, //    'visible' => false,
+		'visible' 				=> false, // 'is_visible'			=> false, 
 		'required'				=> true,
-		'user_defined'			=> true,
-		'visible_on_front'		=> false,
-		'sort_order'			=> 1000,
+		'user_defined'				=> true,
+		'visible_on_front'			=> false,
+		'sort_order'				=> 1000,
 		'group'					=> '',
 		'source'				=> 'eav/entity_attribute_source_boolean',
 	);
 $installer->addAttribute('catalog_product','product_flasher_enable', $data);
-// $installer->addAttributeToSet('catalog_product', 'Default', 'General', 'product_flasher_enable', 1000);
+$installer->addAttributeToSet('catalog_product', 'Default', 'General', 'product_flasher_enable', 1000);
 //Default = attribute set, Product Flasher = attribute group (Like General, Price)
 
 /*-
