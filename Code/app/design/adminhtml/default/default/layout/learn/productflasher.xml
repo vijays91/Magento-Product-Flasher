@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_catalog_product_edit>
+        <reference name="product_tabs">
+            <action method="addTab">
+                <name>product_flasher</name>
+                <block>productflasher/adminhtml_catalog_product_tab</block>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_edit>
+    
+	<adminhtml_system_config_edit>
+		<reference name="head">
+			<action method="addJs"><script>colorpicker/jscolor/jscolor.js</script></action>
+		</reference>
+	</adminhtml_system_config_edit>
+</layout>

@@ -1,0 +1,72 @@
+<?php
+/**
+ * Integrate Product Flasher
+ *
+ * @category   Product Flasher
+ * @package    Learn_Product_Flasher
+ * @author     Vijayakumar
+ *
+ */
+
+$product = Mage::registry('product'); 
+$product_flasher_title_1 = $product->getData('product_flasher_title_1'); 
+$product_flasher_title_2 = $product->getData('product_flasher_title_2'); 
+$product_flasher_enable  = $product->getData('product_flasher_enable'); 
+
+?>
+<div class="entry-edit">
+    <div class="entry-edit-head">
+		<h4 class="icon-head head-edit-form fieldset-legend">
+			<?php echo $this->getTabTitle();?>
+		</h4>
+	</div>
+	<div class="fieldset fieldset-wide" id="group_fields8">
+		<div class="hor-scroll">
+			<table cellspacing="0" class="form-list">
+				<tbody>
+					<tr>
+						<td class="label">
+							<label for="product_flasher_enable">
+								<?php echo $this->__('Product Flasher Enable');?>
+								<span class="required">*</span>
+							</label>
+						</td>
+						<td class="value">
+							<select id="product_flasher_enable" name="product[product_flasher_enable]" class=" required-entry required-entry select">
+								<option value=""><?php echo $this->__("-- Please Select --");?></option>
+								<option value="1" <?php echo ($product_flasher_enable) ? " selected " : "" ;?> >
+									<?php echo $this->__('Enable');?>
+								</option>
+								<option value="0" <?php echo (!$product_flasher_enable) ? " selected " : "" ;?> >
+									<?php echo $this->__('Disable');?>
+								</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label for="product_flasher_title_1">
+								<?php echo $this->__('Product Flasher Title#1');?>
+								<span class="required">*</span>
+							</label>
+						</td>
+						<td class="value">
+							<input id="product_flasher_title_1" name="product[product_flasher_title_1]" value="<?php echo $product_flasher_title_1; ?>" class=" required-entry input-text" type="text" />
+						</td>
+					</tr>
+					<tr>
+						<td class="label">
+							<label for="product_flasher_title_2">
+								<?php echo $this->__('Product Flasher Title#2');?>
+								<span class="required">*</span>
+							</label>
+						</td>
+						<td class="value">
+							<input id="product_flasher_title_2" name="product[product_flasher_title_2]" value="<?php echo $product_flasher_title_2; ?>" class=" required-entry input-text" type="text" />
+						</td>
+					</tr>
+            	</tbody>
+        	</table>
+		</div>
+	</div>
+</div>

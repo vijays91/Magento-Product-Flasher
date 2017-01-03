@@ -1,0 +1,66 @@
+<?php
+/**
+ * Integrate Product Flasher
+ *
+ * @category   Product Flasher
+ * @package    Learn_Product_Flasher
+ * @author     Vijayakumar
+ *
+ */
+
+
+/** $this = Learn_Product_Flasher_Block_Productflasher **/
+
+
+$active             = Mage::helper('productflasher')->pf_enable();
+$bg_color           = Mage::helper('productflasher')->pf_bg_color();
+$title_txt_color    = Mage::helper('productflasher')->pf_title_txt_color();
+$subtitle_txt_color = Mage::helper('productflasher')->pf_subtitle_txt_color();
+$animation_speed    = Mage::helper('productflasher')->pf_animation_speed();
+
+if($active) {
+    $products = $this->getProductFlasherCollection();
+        if(count($products) > 0 ) {
+        ?>
+        <div class="productflasher" id="productflasher">
+            <div id="productflasher_inner">
+                <?php foreach($products as $product): ?>
+                    <div class="productflasher_slide">
+                        <div class="pftitle" id="pftitle">
+                            <strong><?php echo $product->getData('product_flasher_title_1')?></strong>
+                        </div>
+                        <span class="pfsubtitle" id="pfsubtitle">
+                            <a href="<?php echo $this->getProductFlasherURL($product->getId()); ?>">
+                                <?php echo $product->getData('product_flasher_title_2')?>
+                            </a>
+                        </span>
+                        <div class="clear">&nbsp;</div>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+    <?php } ?>
+    <script type="text/javascript">
+        var total_slider = $$("#productflasher .productflasher_slide").length;
+        if(total_slider > 0 ) {
+            $$("#productflasher .productflasher_slide").each(Element.hide);
+            silder_effct(start = 0, total_slider);
+        }
+        function silder_effct(start, total_slider ) {
+            if(start < total_slider) {
+                //jQuery("#productflasher .productflasher_slide").hide();
+                $$("#productflasher .productflasher_slide").each(Element.hide);
+                $$("#productflasher .productflasher_slide")[start].show();
+                start++;
+                if(start == total_slider) {
+                    start = 0;
+                }
+                setTimeout(function(){ silder_effct( start, total_slider) }, "<?php echo $animation_speed; ?>");
+            }
+        }
+        $$("#productflasher_inner").invoke("setStyle",{'background-color':'#<?php echo $bg_color;?>'});
+        $$(".pftitle").invoke("setStyle",{'color':'#<?php echo $title_txt_color;?>'});
+        $$(".pfsubtitle a").invoke("setStyle",{'color':'#<?php echo $subtitle_txt_color;?>'});
+    </script>
+    
+<?php } ?>

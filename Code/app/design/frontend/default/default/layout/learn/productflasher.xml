@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="addCss" ifconfig="productflasher/settings/active">
+                <stylesheet>css/productflasher/productflasher.css</stylesheet>
+            </action>
+        </reference>
+        <reference name="header">
+            <!-- <reference name="top.container"> -->
+            <reference name="top.menu">
+				<block type="productflasher/productflasher" name="product_flasher" as="product_flasher">
+					<action method="setTemplate" ifconfig="productflasher/settings/active">
+    					<template>productflasher/productflasher.phtml</template>
+					</action>
+				</block>
+            </reference>
+        </reference>
+    </default>
+</layout>
